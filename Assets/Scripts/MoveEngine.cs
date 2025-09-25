@@ -2,15 +2,12 @@ using UnityEngine;
 
 public class MoveEngine : MonoBehaviour
 {
-    [SerializeField] private float speed;
-    [SerializeField] private float sidewaySpeed;
-    [SerializeField] private float jumpForce;
+    [SerializeField] private float _speed;
+    [SerializeField] private float _sidewaySpeed;
+    [SerializeField] private float _jumpForce;
     public Rigidbody rb;
     private bool isGrounded;
-    void Start()
-    {
-        Debug.Log("start");
-    }
+    
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.CompareTag("Ground") || collision.collider.CompareTag("Obstacle"))
@@ -31,22 +28,22 @@ public class MoveEngine : MonoBehaviour
 
         if (Input.GetKey(KeyCode.W))
         {
-            transform.position = new Vector3(transform.position.x + (speed + Time.deltaTime), transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x + (_speed + Time.deltaTime), transform.position.y, transform.position.z);
         }
 
         if (Input.GetKey(KeyCode.A))
         {
-            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + (sidewaySpeed + Time.deltaTime));
+            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + (_sidewaySpeed + Time.deltaTime));
         }
 
         if (Input.GetKey(KeyCode.D))
         {
-            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - (sidewaySpeed + Time.deltaTime));
+            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - (_sidewaySpeed + Time.deltaTime));
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded == true)
         {
-            rb.AddForce(new Vector3(rb.linearVelocity.y, jumpForce), ForceMode.Impulse);
+            rb.AddForce(new Vector3(rb.linearVelocity.y, _jumpForce), ForceMode.Impulse);
         }
     }
 }

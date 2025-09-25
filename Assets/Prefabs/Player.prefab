@@ -151,8 +151,10 @@ GameObject:
   - component: {fileID: 5077126831610503331}
   - component: {fileID: 768265529137140096}
   - component: {fileID: 5087451541285514560}
+  - component: {fileID: 9186333601435637436}
+  - component: {fileID: 2840644249398689166}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -290,7 +292,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc6ad4f9adf9d4447a9f978b71d6c701, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoveEngine
-  speed: 0.01
-  sidewaySpeed: 0.008
-  jumpForce: 5
+  _speed: 0.01
+  _sidewaySpeed: 0.008
+  _jumpForce: 5
   rb: {fileID: 768265529137140096}
+--- !u!114 &9186333601435637436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9197380973371008165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df8e28bc6d55f0047b447ebebe840074, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerStatList
+  coinCount: 0
+  healthCount: 100
+--- !u!114 &2840644249398689166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9197380973371008165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc2df6c1d5a9a049ae9705b8b2892a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HealthEngine
+  player: {fileID: 9186333601435637436}

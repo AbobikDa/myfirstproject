@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
-    [SerializeField] private float rotationSpeed; 
+    [SerializeField] private float _rotationSpeed; 
 
     void Start()
     {
@@ -11,7 +11,7 @@ public class Coin : MonoBehaviour
 
     void Update()
     {
-        transform.Rotate(Vector3.left * (rotationSpeed * Time.deltaTime));
+        transform.Rotate(Vector3.left * (_rotationSpeed * Time.deltaTime));
     }
 
     private void OnTriggerEnter(Collider other)

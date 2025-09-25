@@ -3,11 +3,13 @@ using TMPro;
 
 public class UIEngine : MonoBehaviour
 {
-    public TextMeshProUGUI UICoinCounter;
-    public PlayerStatList playerStatList;
+    [SerializeField] private TextMeshProUGUI _UICoinCounter;
+    [SerializeField] private TextMeshProUGUI _UIHealthCounter;
+    [SerializeField] private PlayerStatList _playerStats;
 
     private void Update()
     {
-        UICoinCounter.text = $"coins: {playerStatList.coinCount.ToString()}";
+        _UICoinCounter.text = $"coins: {_playerStats.coinCount.ToString()}";
+        _UIHealthCounter.text = $"health: {_playerStats.healthCount.ToString()}";
     }
 }
