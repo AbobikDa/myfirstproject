@@ -5,9 +5,14 @@ public class MoveEngine : MonoBehaviour
     [SerializeField] private float _speed;
     [SerializeField] private float _sidewaySpeed;
     [SerializeField] private float _jumpForce;
-    public Rigidbody rb;
-    private bool isGrounded;
-    
+    private Rigidbody rb;
+    private bool isGrounded = false;
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.CompareTag("Ground") || collision.collider.CompareTag("Obstacle"))
@@ -25,7 +30,7 @@ public class MoveEngine : MonoBehaviour
     }
     void Update()
     {
-
+        /*
         if (Input.GetKey(KeyCode.W))
         {
             transform.position = new Vector3(transform.position.x + (_speed + Time.deltaTime), transform.position.y, transform.position.z);
@@ -40,10 +45,16 @@ public class MoveEngine : MonoBehaviour
         {
             transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - (_sidewaySpeed + Time.deltaTime));
         }
+        */
+
+        var moveFWD = Input.GetAxis("Vertical");
+        var moveSDW = Input.GetAxis("Horizontal");
+
+        rb.linearVelocity = new Vector3(moveFWD * _speed, rb.linearVelocity.y,-1 * moveSDW * _sidewaySpeed);
 
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded == true)
         {
-            rb.AddForce(new Vector3(rb.linearVelocity.y, _jumpForce), ForceMode.Impulse);
+            rb.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
         }
     }
 }

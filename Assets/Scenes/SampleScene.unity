@@ -2782,6 +2782,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5087451541285514560, guid: 24db228aabe4cbb41a08c5f68367e4dc, type: 3}
+      propertyPath: _speed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5087451541285514560, guid: 24db228aabe4cbb41a08c5f68367e4dc, type: 3}
+      propertyPath: _sidewaySpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 9197380973371008165, guid: 24db228aabe4cbb41a08c5f68367e4dc, type: 3}
       propertyPath: m_Name
       value: Cube
