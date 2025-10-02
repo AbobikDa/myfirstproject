@@ -19,6 +19,6 @@ public class HealthEngine : MonoBehaviour
 
     public void Die()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Level_1");
     }
 }     
