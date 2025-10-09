@@ -19,6 +19,7 @@ public class HealthEngine : MonoBehaviour
 
     public void Die()
     {
-        SceneManager.LoadScene("Level_1");
+        var curScene = PlayerPrefs.GetInt("scene", 1);
+        SceneManager.LoadScene(curScene);
     }
 }     

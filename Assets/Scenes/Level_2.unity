@@ -736,6 +736,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc363a61ec4bcb9449addf2f84b6d7ea, type: 3}
+--- !u!114 &1880046186 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4280251200157408101, guid: 45f070b9d54182e428eab4d55714ff31, type: 3}
+  m_PrefabInstance: {fileID: 110114869338403691}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c8ecb395ae407546a04532df65431a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneEngine
 --- !u!1001 &2019916799
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -869,6 +880,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 119485831917188126, guid: 610cd421d86952c4fbb17055acc126ce, type: 3}
+      propertyPath: indexScene
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 119485831917188126, guid: 610cd421d86952c4fbb17055acc126ce, type: 3}
+      propertyPath: sceneEngine
+      value: 
+      objectReference: {fileID: 1880046186}
     - target: {fileID: 6734263814277163511, guid: 610cd421d86952c4fbb17055acc126ce, type: 3}
       propertyPath: m_Name
       value: end

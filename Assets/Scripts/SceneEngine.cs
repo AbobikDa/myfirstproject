@@ -1,4 +1,3 @@
-using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,7 +11,17 @@ public class SceneEngine : MonoBehaviour
     }
     public void LoadSaveScene()
     {
-        var curScene = PlayerPrefs.GetInt("scene", 0);
-        SceneManager.LoadScene("Level_1");
+        var curScene = PlayerPrefs.GetInt("scene", 1);
+        SceneManager.LoadScene(sceneList[curScene]);
+    }
+    public void LoadSaveScene(int sceneIndex)
+    {
+        SceneManager.LoadScene(sceneList[sceneIndex]);
+    }
+
+    public void ClearSaved()
+    {
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.Save();
     }
 }
